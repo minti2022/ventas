@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Ventas</title>
+  <style>
+    body { font-family: sans-serif; background: #f4f4f9; padding: 20px; max-width: 1000px; margin: auto; }
+    h1 { text-align: center; color: #333; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 20px; margin-top: 20px; }
+    .tarjeta { background: white; padding: 15px; border-radius: 10px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+    .tarjeta img { width: 100%; height: 150px; object-fit: cover; border-radius: 8px; background: #eee; }
+    .precio { color: #2e7d32; font-weight: bold; font-size: 1.2em; }
+  </style>
+</head>
+<body>
+
+  <h1>Mi Catálogo de Ventas</h1>
+  <div id="catalogo" class="grid"></div>
+
+  <script>
+    const productos = [
+      { nombre: "Artículo de Prueba 1", precio: "$50.000", imagen: "https://placeholder.com" },
+      { nombre: "Artículo de Prueba 2", precio: "$85.000", imagen: "https://placeholder.com" }
+    ];
+
+    const contenedor = document.getElementById("catalogo");
+
+    productos.forEach(producto => {
+      contenedor.innerHTML += `
+        <div class="tarjeta">
+          <img src="${producto.imagen}" alt="${producto.nombre}">
+          <h3>${producto.nombre}</h3>
+          <p class="precio">${producto.precio}</p>
+        </div>
+      `;
+    });
+  </script>
+
+</body>
+</html>
